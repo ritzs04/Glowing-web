@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .product-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product-price {
+            color: #e8491d;
+            font-size: 1.2em;
+        }
+        .filter {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Product Showcase</h1>
+    </header>
+    <div class="container">
+        <div class="filter">
+            <label for="category">Category: </label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="toys">Toys</option>
+            </select>
+        </div>
+        <div class="products">
+            <div class="product-card">
+                <h2 class="product-title">Smartphone</h2>
+                <p class="product-description">Latest model with all new features.</p>
+                <p class="product-price">$699.99</p>
+            </div>
+            <div class="product-card">
+                <h2 class="product-title">Sofa</h2>
+                <p class="product-description">Comfortable and stylish.</p>
+                <p class="product-price">$499.99</p>
+            </div>
+            <div class="product-card">
+                <h2 class="product-title">Toy Car</h2>
+                <p class="product-description">Fun for kids of all ages.</p>
+                <p class="product-price">$19.99</p>
+            </div>
+            <!-- Additional product cards can be added here -->
+        </div>
+    </div>
+</body>
+</html>
