@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .summary {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .checkout-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .checkout-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <tr>
+                <td>Product 1</td>
+                <td>
+                    <button onclick="adjustQuantity('product1', -1)">-</button>
+                    <span id="product1-quantity">1</span>
+                    <button onclick="adjustQuantity('product1', 1)">+</button>
+                </td>
+                <td>$10.00</td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>Product 2</td>
+                <td>
+                    <button onclick="adjustQuantity('product2', -1)">-</button>
+                    <span id="product2-quantity">1</span>
+                    <button onclick="adjustQuantity('product2', 1)">+</button>
+                </td>
+                <td>$15.00</td>
+                <td>$15.00</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="summary">
+        <p>Subtotal: $25.00</p>
+        <p>Shipping: $5.00</p>
+        <p>Tax: $2.00</p>
+        <p><strong>Total: $32.00</strong></p>
+    </div>
+    <button class="checkout-button">Checkout</button>
+    <script>
+        function adjustQuantity(product, change) {
+            const quantitySpan = document.getElementById(product + '-quantity');
+            let currentQuantity = parseInt(quantitySpan.innerText);
+            currentQuantity += change;
+            if (currentQuantity < 0) currentQuantity = 0;
+            quantitySpan.innerText = currentQuantity;
+            // Recalculate total here if needed
+        }
+    </script>
+</body>
+</html>
